@@ -499,6 +499,21 @@ img {
 }
 
 
+@media (max-width: 768px) {
+  .stat h3 {
+  font-size: 28px;
+  margin: 5px 0;
+}
+
+.stat p {
+  font-size: 20px;
+  margin: 5px 0;
+}
+
+}
+
+
+
 /*FAQ секция*/
 
 .faq {
@@ -558,8 +573,8 @@ img {
   .partner-logos img { 
    
     margin: 0 -30px;
-    max-width: 200px;
-    max-height: 200px;
+    max-width: 180px;
+    max-height: 180px;
  }
 }
 
