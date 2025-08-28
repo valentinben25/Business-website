@@ -199,7 +199,7 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
-  color: #f86402;
+  color: #ffffff;
 }
 .hero h1 {
   font-size: 48px;
@@ -209,7 +209,7 @@ body {
 }
 
 .hero h1 span {
-  color: #ffffff;
+  color: #ff7700;
 
 }
 
