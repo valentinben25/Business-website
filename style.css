@@ -167,7 +167,7 @@ body {
   font-weight: bold;
 }
 .logo span {
-  color: #ff6600;
+  color: #ffffff;
 }
 
 .nav {
@@ -180,7 +180,7 @@ body {
   transition: color 0.3s;
 }
 .nav a:hover {
-  color: #ff6600;
+  color: #0056b3;
 }
 
 .menu-toggle {
@@ -199,14 +199,20 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
-  color: #fff;
+  color: #000000;
 }
 .hero h1 {
   font-size: 48px;
+  border-width: 10px;
+  border: 10px solid black;
+
 }
+
 .hero h1 span {
-  color: #ff6600;
+  color: #000000;
+
 }
+
 .hero p {
   margin: 20px 0;
   font-size: 18px;
@@ -216,14 +222,14 @@ body {
 .btn {
   display: inline-block;
   padding: 12px 25px;
-  background: #ff6600;
-  color: #fff;
+  background: #0056b3;
+  color: #ffffff;
   border-radius: 6px;
   text-decoration: none;
   transition: background 0.3s;
 }
 .btn:hover {
-  background: #e65500;
+  background: #022f60;
 }
 
 .hero1 {
@@ -250,7 +256,7 @@ body {
 .hero-content p {
   font-size: 1.2rem;
   margin-bottom: 30px;
-  color: #ddd;
+  color: #ffffff;
 }
 
 .btn-primary {
