@@ -29,9 +29,112 @@ img {
   display: block;
 }
 
+/* Телефони (до 600px ширина) */
+@media (max-width: 600px) {
+  body {
+    font-size: 16px;
+    line-height: 1.5;
+    padding: 0 10px;
+  }
+
+  .header .nav {
+    display: none; /* скриваме менюто */
+  }
+
+  .header .menu-toggle {
+    display: block; /* показваме мобилното меню */
+  }
+
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 40px 20px;
+  }
+
+  .hero img {
+    max-width: 100%;
+    margin-top: 20px;
+  }
+
+  .services,
+  .portfolio-grid,
+  .stats,
+  .partners-logos,
+  .testimonials,
+  .faq,
+  .insights {
+    grid-template-columns: 1fr; /* всичко на една колона */
+  }
+
+  .btn-primary {
+    display: inline-block;
+    width: auto;
+    padding: 14px 24px;
+    font-size: 16px;
+  }
+}
+
+/* Таблети (600px – 1024px) */
+@media (min-width: 601px) and (max-width: 1024px) {
+  body {
+    font-size: 17px;
+    padding: 0 20px;
+  }
+
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero img {
+    max-width: 80%;
+    margin: 20px auto 0;
+  }
+
+  .portfolio-grid {
+    grid-template-columns: repeat(2, 1fr); /* две колони */
+    gap: 20px;
+  }
+
+  .stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .partners-logos {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+/* Десктоп (над 1024px) */
+@media (min-width: 1025px) {
+  body {
+    font-size: 18px;
+    padding: 0;
+  }
+
+  .hero {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+  }
+
+  .portfolio-grid {
+    grid-template-columns: repeat(4, 1fr); /* четири колони */
+  }
+
+  .stats {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .partners-logos {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
 /* Header */
 .header {
-  display: flex;
+  /* display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 15px 10%;
@@ -39,7 +142,24 @@ img {
   color: #fff;
   position: sticky;
   top: 0;
-  z-index: 1000;
+  z-index: 1000; */
+
+  position: fixed;       /* фиксира хедъра */
+  top: 0;                /* винаги горе */
+  left: 0;
+  width: 100%;           /* да заема цялата ширина */
+  background: #111;      /* фон (може да смениш) */
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  z-index: 1000;         /* за да е над всички елементи */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2); /* малка сянка за ефект */
+}
+
+body {
+  padding-top: 80px;  /* височината на header-а */
 }
 
 .logo {
@@ -176,7 +296,6 @@ img {
   margin-bottom: 20px;
   margin-top: -220px;
   line-height: 1.2;
-  outline: auto;
 }
 
 }
