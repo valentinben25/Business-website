@@ -12,6 +12,24 @@ body {
   line-height: 1.6;
 }
 
+/* Поправка за мобилни – премахва хоризонтален скрол */
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+/* Всички елементи да не излизат извън екрана */
+* {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+
 /* Header */
 .header {
   display: flex;
