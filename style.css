@@ -29,7 +29,6 @@ img {
   display: block;
 }
 
-
 /* Header */
 .header {
   display: flex;
@@ -553,6 +552,15 @@ img {
   max-height: 250px;
   object-fit: contain;
   transition: filter 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .partner-logos img { 
+   
+    margin: 0 -30px;
+    max-width: 200px;
+    max-height: 200px;
+ }
 }
 
 
