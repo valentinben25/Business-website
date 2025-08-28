@@ -74,6 +74,36 @@ img {
   }
 }
 
+
+@media (max-width: 768px) {
+  body {
+    overflow-x: hidden; /* премахва хоризонталното празно пространство */
+  }
+
+  h1, h2, h3, p {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+
+  h1 {
+    font-size: clamp(28px, 6vw, 60px); /* адаптивен размер на текста */
+  }
+}
+
+
+html {
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
 /* Таблети (600px – 1024px) */
 @media (min-width: 601px) and (max-width: 1024px) {
   body {
@@ -199,23 +229,24 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
-  color: #ffffff;
+  color: #000000;
 }
 .hero h1 {
   font-size: 48px;
   border-width: 10px;
-  border: 5px solid rgb(255, 255, 255);
+  background-color: rgb(255, 255, 255);
+  
 
 }
 
 .hero h1 span {
   color: #ff7700;
-
 }
 
 .hero p {
   margin: 20px 0;
   font-size: 18px;
+  background-color: rgb(255, 255, 255);
 }
 
 
@@ -256,7 +287,7 @@ body {
 .hero-content p {
   font-size: 1.2rem;
   margin-bottom: 30px;
-  color: #ffffff;
+  color: #000000;
 }
 
 .btn-primary {
