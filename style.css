@@ -161,10 +161,23 @@ img {
 
 @media (max-width: 768px) { 
  .hero-image img {
-  width: 100px;
+  width: 500px;
   display: flex;
   margin-top: 300px;
+  margin-left: -100px;
  }
+
+ .hero-content {
+  max-width: 50%;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  margin-top: -220px;
+  line-height: 1.2;
+  outline: auto;
+}
 
 }
 
