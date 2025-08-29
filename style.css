@@ -210,7 +210,7 @@ body {
   transition: color 0.3s;
 }
 .nav a:hover {
-  color: #0056b3;
+  color: #ff8000;
 }
 
 .menu-toggle {
