@@ -291,6 +291,18 @@ body {
   margin: 20px 0;
 }
 
+.hero-content1 h1 {
+  font-size: 3rem;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.hero-content1 p {
+   margin: 20px 0;
+   font-size: 1.2rem;
+   color: #ffffff;
+}
+
 
 .btn-primary {
   display: inline-block;
