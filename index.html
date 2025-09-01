@@ -1,309 +1,983 @@
-<!DOCTYPE html>
-<html lang="bg">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Digital Agency</title>
-  <link rel="stylesheet" href="style.css?v=3">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link rel="icon" type="image/png" href="img/favicon/favicon01.png">
-</head>
-<body>
+/* Основни стилове */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  color: #333;
+  background: #f9f9f9;
+  line-height: 1.6;
+}
+
+/* Поправка за мобилни – премахва хоризонтален скрол */
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+/* Всички елементи да не излизат извън екрана */
+* {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Телефони (до 600px ширина) */
+@media (max-width: 600px) {
+  body {
+    font-size: 16px;
+    line-height: 1.5;
+    padding: 0 10px;
+  }
+
+  .header .nav {
+    display: none; /* скриваме менюто */
+  }
+
+  .header .menu-toggle {
+    display: block; /* показваме мобилното меню */
+  }
+
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 40px 20px;
+  }
+
+  .hero img {
+    max-width: 100%;
+    margin-top: 20px;
+  }
+
+  .services,
+  .portfolio-grid,
+  .stats,
+  .partners-logos,
+  .testimonials,
+  .faq,
+  .insights {
+    grid-template-columns: 1fr; /* всичко на една колона */
+  }
+
+  .btn-primary {
+    display: inline-block;
+    width: auto;
+    padding: 14px 24px;
+    font-size: 16px;
+  }
+}
 
 
-  <!-- Header -->
-  <header class="header">
-    <div class="logo">Digital<span>Agency</span></div>
-    <nav class="nav">
-      <a href="#home">Home</a>
-      <a href="#services">Services</a>
-      <a href="#portfolio">Portfolio</a>
-      <a href="#about Us">About Us</a>
-      <a href="#testimonials">Testimonials</a>
-      <a href="#insights">Insights</a>
-      <a href="#contact">Contacts</a>
-    </nav>
-    <button class="menu-toggle">☰</button>
-  </header>
+@media (max-width: 768px) {
+  body {
+    overflow-x: hidden; /* премахва хоризонталното празно пространство */
+  }
 
-  <!-- Hero Section -->
-  <section id="home" class="hero">
-    <div class="hero-content">
-      <h1>We build<span>online solutions</span></h1>
-      <p>We are a digital agency that creates modern websites and effective marketing campaigns.</p>
-      <a href="#contact" class="btn">Contact us</a>
-    </div>
-  </section>
+  h1, h2, h3, p {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+  }
 
-    <section id="home" class="hero1">
-    <div class="hero-content1">
-      <h1>We Build Digital Experiences</h1>
-      <p>Creative websites, modern marketing, and digital strategies to grow your business.</p>
-      <a href="#services" class="btn-primary">Get Started</a>
-    </div>
-    <div class="hero-image">
-      <img src="img/hero-image/01.avif" alt="Digital Agency Illustration">
-    </div>
-  </section>
+  html {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+
+  h1 {
+    font-size: clamp(28px, 6vw, 60px); /* адаптивен размер на текста */
+  }
+}
 
 
+html {
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
 
-<!-- Services Section -->
-<section id="services" class="services">
-  <div class="container">
-    <h2 class="section-title">Our Services</h2>
-    <p class="section-subtitle">We help your business grow through modern digital solutions.</p>
+/* Таблети (600px – 1024px) */
+@media (min-width: 601px) and (max-width: 1024px) {
+  body {
+    font-size: 17px;
+    padding: 0 20px;
+  }
 
-    <div class="services-grid">
-      <!-- Web Design -->
-      <div class="service-card">
-        <div class="icon">💻</div>
-        <h3>Web Design</h3>
-        <p>We create modern and responsive websites that attract and engage your audience.</p>
-      </div>
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
 
-      <!-- Digital Marketing -->
-      <div class="service-card">
-        <div class="icon">📱</div>
-        <h3>Digital Marketing</h3>
-        <p>Reach more customers with effective online campaigns tailored to your business.</p>
-      </div>
+  .hero img {
+    max-width: 80%;
+    margin: 20px auto 0;
+  }
 
-      <!-- Brand Identity -->
-      <div class="service-card">
-        <div class="icon">🎨</div>
-        <h3>Brand Identity</h3>
-        <p>We build a strong and recognizable visual identity that represents your brand.</p>
-      </div>
+  .portfolio-grid {
+    grid-template-columns: repeat(2, 1fr); /* две колони */
+    gap: 20px;
+  }
 
-      <!-- SEO Optimization -->
-      <div class="service-card">
-        <div class="icon">🔍</div>
-        <h3>SEO Optimization</h3>
-        <p>Boost your search engine rankings and make your business easier to find online.</p>
-      </div>
+  .stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
 
-      <!-- Content Creation -->
-      <div class="service-card">
-        <div class="icon">✍️</div>
-        <h3>Content Creation</h3>
-        <p>Engage your audience with high-quality blog posts, videos, and social media content.</p>
-      </div>
+  .partners-logos {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
 
-      <!-- E-commerce Solutions -->
-      <div class="service-card">
-        <div class="icon">🛒</div>
-        <h3>E-commerce Solutions</h3>
-        <p>We build powerful online stores that help you sell more and manage your business easily.</p>
-      </div>
-    </div>
-    <div class="services-cta">
-  <a href="#contact" class="btn-primary">Get a Quote</a>
-</div>
-  </div>
-</section>
+/* Десктоп (над 1024px) */
+@media (min-width: 1025px) {
+  body {
+    font-size: 18px;
+    padding: 0;
+  }
 
+  .hero {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+  }
 
+  .portfolio-grid {
+    grid-template-columns: repeat(4, 1fr); /* четири колони */
+  }
 
-  <!-- Portfolio -->
+  .stats {
+    grid-template-columns: repeat(4, 1fr);
+  }
 
-<section id="portfolio" class="portfolio">
-  <h2>Portfolio</h2>
-  <p>Here are some of our recent projects.</p>
-  <div class="portfolio-grid">
-    <div class="portfolio-item">
-      <img src="img/hero-Portfolio/portfolio-01.jpg" alt="Web Design Project">
-      <h3>Web Design</h3>
-      <p>Web design and development</p>
-    </div>
-    <div class="portfolio-item">
-      <img src="img/hero-Portfolio/portfolio-02.jpg" alt="Mobile App Project">
-      <h3>Mobile App</h3>
-      <p>Mobile app development</p>
-    </div>
-    <div class="portfolio-item">
-      <img src="img/hero-Portfolio/portfolio-03.png" alt="SEO Project">
-      <h3>SEO</h3>
-      <p>Optimization for search engines</p>
-    </div>
-    <div class="portfolio-item">
-      <img src="img/hero-Portfolio/portfolio-04.png" alt="Marketing Project">
-      <h3>Marketing</h3>
-      <p>Digital marketing and strategy</p>
-    </div>
-  </div>
-</section>
+  .partners-logos {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
 
-<!-- About Us -->
+/* Header */
+.header {
+  /* display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 10%;
+  background: #111;
+  color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 1000; */
 
-  <section id="about Us" class="about">
-  <div class="about-container">
-    <div class="about-text">
-      <h2>About Us</h2>
-      <p>
-        We are a creative digital agency passionate about building modern websites 
-        and digital experiences that help businesses grow. Our mission is to combine 
-        design, strategy, and technology to deliver impactful solutions.
-      </p>
-      <p>
-        Whether you are a startup or an established company, we provide tailored 
-        services to bring your ideas to life and make your brand stand out in the 
-        digital world.
-      </p>
-    </div>
-    <div class="about-image">
-      <img src="img/hero-About Us/01.jpg" alt="Our Team">
-    </div>
-  </div>
-</section>
+  position: fixed;       /* фиксира хедъра */
+  top: 0;                /* винаги горе */
+  left: 0;
+  width: 100%;           /* да заема цялата ширина */
+  background: #111;      /* фон (може да смениш) */
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  z-index: 1000;         /* за да е над всички елементи */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2); /* малка сянка за ефект */
+}
 
+body {
+  padding-top: 80px;  /* височината на header-а */
+}
 
-<!--Testimonials-->
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+.logo span {
+  color: #ff8400;
+}
 
-<section id="testimonials" class="testimonials">
-  <h2>What Our Clients Say</h2>
-  <p class="subtitle">Real feedback from people we've worked with</p>
+.nav {
+  display: flex;
+  gap: 20px;
+}
+.nav a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.nav a:hover {
+  color: #ff8000;
+}
 
-  <div class="testimonial-container">
-    <div class="testimonial">
-      <img src="img/hero-Testimonials/Anna Petrova.jpg" alt="Anna Petrova" class="testimonial-img">
-      <p>"The team at DigitalAgency transformed our online presence. Our sales doubled in just three months!"</p>
-      <h4>Anna Petrova</h4>
-      <span>Marketing Director, Coffee House</span>
-    </div>
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 28px;
+  color: #fff;
+}
 
-    <div class="testimonial">
-      <img src="img/hero-Testimonials/Ivan Georgiev.jpg" alt="Ivan Georgiev" class="testimonial-img">
-      <p>"Professional, creative, and always on time. Highly recommend their web design services!"</p>
-      <h4>Ivan Georgiev</h4>
-      <span>CEO, Tech Solutions</span>
-    </div>
-
-    <div class="testimonial">
-      <img src="img/hero-Testimonials/Maria Dimitrova.jpg" alt="Maria Dimitrova" class="testimonial-img">
-      <p>"Thanks to their SEO strategy, we now rank #1 in Google. Amazing work!"</p>
-      <h4>Maria Dimitrova</h4>
-      <span>Founder, Fashion Hub</span>
-    </div>
-  </div>
-</section>
-
-
-<!--Insights-->
-
-
-<section id="insights" class="insights">
-  <h2>Latest Insights</h2>
-  <p class="section-subtitle">Stay up to date with our thoughts on digital marketing, design and technology.</p>
+/* Hero */
+.hero {
+  background: url('https://picsum.photos/1600/900') center/cover no-repeat;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #000000;
+}
+.hero h1 {
+  font-size: 48px;
+  border-width: 10px;
+  background-color: rgb(255, 255, 255);
   
-  <div class="insights-grid">
-    <div class="insight-card">
-      <img src="img/hero-Insights/02.png" alt="Insight 1">
-      <h3>The Future of Digital Marketing in 2025</h3>
-      <p>Digital marketing is evolving faster than ever. AI tools, automation, and personalization are becoming essential for businesses that want to reach their audience effectively. In this article, we explore the top 5 trends you need to watch this year.</p>
-      <a href="#" class="read-more">Read More →</a>
-    </div>
 
-    <div class="insight-card">
-      <img src="img/hero-Insights/01.png" alt="Insight 2">
-      <h3>SEO Strategies That Actually Work</h3>
-      <p>SEO is not about keywords anymore – it’s about delivering value. We’ll share practical steps to improve your rankings: from technical SEO, to creating content that resonates with your target audience, and building strong backlinks.</p>
-      <a href="#" class="read-more">Read More →</a>
-    </div>
+}
 
-    <div class="insight-card">
-      <img src="img/hero-Insights/03.png" alt="Insight 3">
-      <h3>Why Every Business Needs a Mobile-First Website</h3>
-      <p>Over 70% of users now browse the web from mobile devices. If your site isn’t optimized for mobile, you’re losing clients. Learn why mobile-first design is crucial and how it can boost your customer engagement.</p>
-      <a href="#" class="read-more">Read More →</a>
-    </div>
-  </div>
-</section>
+.hero h1 span {
+  color: #ff7700;
+}
+
+.hero p {
+  margin: 20px 0;
+  font-size: 18px;
+  background-color: rgb(255, 255, 255);
+}
 
 
-<!-- === CTA Section === -->
-<section class="cta">
-  <h2>🚀 Ready to grow your business?</h2>
-  <a href="#contact" class="btn-primary">Get in Touch</a>
-</section>
+.btn {
+  display: inline-block;
+  padding: 12px 25px;
+  background: #0056b3;
+  color: #ffffff;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+.btn:hover {
+  background: #022f60;
+}
 
-<!-- === Stats Section === -->
-<section class="stats">
-  <div class="stat">
-    <i class="fa-solid fa-briefcase"></i>
-    <h3>20+</h3>
-    <p>Successful Projects</p>
-  </div>
-  <div class="stat">
-    <i class="fa-solid fa-users"></i>
-    <h3>15+</h3>
-    <p>Happy Clients</p>
-  </div>
-  <div class="stat">
-    <i class="fa-solid fa-clock"></i>
-    <h3>5</h3>
-    <p>Years of Experience</p>
-  </div>
-</section>
+.hero1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 80px 10%;
+  min-height: 90vh;
+  background: linear-gradient(135deg, #1e1e2f, #2c3e50);
+  color: #fff;
+}
 
-<!-- === FAQ Section === -->
-<section class="faq">
-  <h2>Frequently Asked Questions</h2>
+
+.hero-content {
+  max-width: 50%;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  color: #000000;
+  margin: 20px 0;
+}
+
+.hero-content1 h1 {
+  font-size: 3rem;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.hero-content1 p {
+   margin: 20px 0;
+   font-size: 1.2rem;
+   color: #ffffff;
+}
+
+
+.btn-primary {
+  display: inline-block;
+  padding: 12px 30px;
+  background: #ff5a5f;
+  color: #fff;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.btn-primary:hover {
+  background: #e0484c;
+}
+
+.hero-image {
+  max-width: 45%;
+}
+
+.hero-image img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+
+
+@media (max-width: 768px) { 
+ .hero-image img {
+  width: 500px;
+  display: flex;
+  margin-top: 300px;
+  margin-left: -5px;
+ }
+
+ .hero-content {
+  max-width: 50%;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  margin-top: -220px;
+  line-height: 1.2;
+}
+
+.hero-content1 h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  margin-top: -220px;
+  line-height: 1.2;
+}
+
+}
+
+/* Отзивчив дизайн (за телефони) */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 50px 20px;
+  }
+
+  .hero-content {
+    max-width: 100%;
+    margin-bottom: 40px;
+  }
+
+  .hero-image {
+    max-width: 100%;
+  }
+}
+
+
+/* Services */
+.services {
+  padding: 100px 20px;
+  text-align: center;
+  background: #0f1222;
+}
+
+.section-title {
+  font-size: 36px;
+  margin-bottom: 10px;
+  color: white;
+}
+
+.section-subtitle {
+  color: #b6bed3;
+  margin-bottom: 50px;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.service-card {
+  background: #141833;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 30px 20px;
+  border-radius: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+}
+
+.service-card .icon {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+.service-card h3 {
+  font-size: 22px;
+  margin-bottom: 15px;
+  color: #fff;
+}
+
+.service-card p {
+  color: #b6bed3;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.services-cta {
+  text-align: center;
+  margin-top: 40px;
   
-  <div class="faq-item">
-    <button class="faq-question">What services do you provide?</button>
-    <div class="faq-answer">
-      <p>We offer web design, development, and digital marketing services tailored to your needs.</p>
-    </div>
-  </div>
+}
 
-  <div class="faq-item">
-    <button class="faq-question">How long does a project take?</button>
-    <div class="faq-answer">
-      <p>Most projects take 2-6 weeks depending on complexity.</p>
-    </div>
-  </div>
+.services-cta {
+  display: flex;              /* активираме flexbox */
+  justify-content: center;    /* центриране хоризонтално */
+  align-items: center; /* центрира и по височина ако има височина */
+  margin-top: 40px;
+  width: 100%;
+}
 
-  <div class="faq-item">
-    <button class="faq-question">Do you work internationally?</button>
-    <div class="faq-answer">
-      <p>Yes, we collaborate with clients worldwide through online tools.</p>
-    </div>
-  </div>
-</section>
+.services-cta .btn-primary {
+  padding: 18px 40px;
+  background: #007bff;
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
 
-<!-- === Partners Section === -->
-<section class="partners">
-  <h2>Our Partners</h2>
-  <div class="partner-logos">
-    <img src="img/hero-Partners/CloudPlus.png" alt="Partner 1">
-    <img src="img/hero-Partners/GlobalTech.png" alt="Partner 2">
-    <img src="img/hero-Partners/GreenEnergy.png" alt="Partner 3">
-    <img src="img/hero-Partners/SpeedyDelivery.png" alt="Partner 4">
-  </div>
-</section>
+.services-cta .btn-primary:hover {
+  background: #0056b3;
+}
 
 
 
-<!--Contact-->
+/* Portfolio Section */
 
-<section id="contact" class="contact">
-    <h2>Contact us</h2>
-    <form>
-      <input type="text" placeholder="Your name" required>
-      <input type="email" placeholder="Your email" required>
-      <textarea placeholder="Your message" required></textarea>
-      <button type="submit" class="btn">Send</button>
-    </form>
-  </section>
+.portfolio {
+  padding: 80px 20px;
+   background: linear-gradient(135deg, #1e1e2f, #2c3e50);
+  color: #fff;
+  text-align: center;
+}
 
+.portfolio p {
+   padding: 50px;
+  font-size: 20px;
+}
+
+@media (max-width: 768px) {
+  .portfolio p { 
    
+    margin: 0 -30px;
+ }
+}
 
-  <!-- Footer -->
-  <footer class="footer">
-    <p>© 2025 Digital Agency. All rights reserved.</p>
-  </footer>
+.portfolio h2 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: #fff;
+}
 
-  <script src="script.js?v=3"></script>
-</body>
-</html>
+.portfolio .section-title {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: #222;
+}
+
+.portfolio .section-subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+  color: #555;
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+}
+
+.portfolio-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.portfolio-item h3 {
+  font-size: 30px;
+}
+
+.portfolio-item img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+
+
+.portfolio-item .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.4s ease;
+}
+
+.portfolio-item:hover .overlay {
+  opacity: 1;
+
+}
+
+/* About Us */
+
+.about {
+  padding: 80px 20px;
+  background-color: #0f1222;
+}
+
+.about-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 40px;
+}
+
+.about-text {
+  flex: 1 1 500px;
+}
+
+.about-text h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.about-text p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  color: white;
+}
+
+.about-image {
+  flex: 1 1 400px;
+  text-align: center;
+}
+
+.about-image img {
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+
+/* CTA секция */
+
+.cta-section {
+  background: #007bff;
+  color: #fff;
+  text-align: center;
+  padding: 80px 20px;
+  border-radius: 10px;
+  margin: 60px auto;
+  max-width: 1000px;
+}
+
+.cta-section h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.cta-section p {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.cta-section .btn-primary {
+  background: #fff;
+  color: #007bff;
+  font-weight: bold;
+  padding: 16px 32px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.cta-section .btn-primary:hover {
+  background: #0056b3;
+  color: #fff;
+}
+
+.cta {
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  color: #fff;
+  text-align: center;
+  padding: 60px 20px;
+  margin: 60px 0;
+  border-radius: 10px;
+}
+
+.cta h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.cta .btn-primary {
+  display: inline-block;
+  padding: 14px 32px;
+  background: #fff;
+  color: #007bff;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.cta .btn-primary:hover {
+  background: #f0f0f0;
+  color: #0056b3;
+}
+
+/*Stats секция*/
+
+.stats {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin: 60px 0;
+  text-align: center;
+}
+
+.stat i {
+  font-size: 40px;
+  color: #007bff;
+  margin-bottom: 10px;
+}
+
+.stat h3 {
+  font-size: 28px;
+  margin: 5px 0;
+}
+
+.stat p {
+  color: #555;
+}
+
+
+@media (max-width: 768px) {
+  .stat h3 {
+  font-size: 28px;
+  margin: 5px 0;
+}
+
+.stat p {
+  font-size: 16px;
+  margin: 5px 0;
+}
+
+}
+
+
+
+/*FAQ секция*/
+
+.faq {
+  max-width: 800px;
+  margin: 60px auto;
+}
+
+.faq-question {
+  width: 100%;
+  padding: 15px;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: left;
+  border: none;
+  background: #f1f1f1;
+  cursor: pointer;
+  outline: none;
+  transition: background 0.3s ease;
+}
+
+.faq-question:hover {
+  background: #e2e2e2;
+}
+
+.faq-answer {
+  display: none;
+  padding: 15px;
+  background: #fff;
+  border-left: 3px solid #007bff;
+}
+
+
+/*Partners*/
+
+.partners {
+  text-align: center;
+  margin: 60px 0;
+}
+
+.partner-logos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+  align-items: center;
+  justify-items: center;
+  margin-top: 20px;
+}
+
+.partner-logos img {
+  max-width: 250px;
+  max-height: 250px;
+  object-fit: contain;
+  transition: filter 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .partner-logos img { 
+
+    margin: 0 -30px;
+    max-width: 180px;
+    max-height: 180px;
+ }
+}
+
+
+
+
+
+/* Contact */
+.contact { 
+  padding: 80px 10%;
+  text-align: center;
+  background: #0f1222;
+}
+
+.contact h2 {
+  color: white;
+}
+
+
+.contact form {
+  max-width: 500px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.contact input, .contact textarea {
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+.contact button {
+  background: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  padding: 12px;
+  border-radius: 6px;
+  transition: background 0.3s;
+}
+.contact button:hover {
+  background: #0056b3;
+}
+
+
+
+/* Testimonials Section */
+.testimonials {
+  background: linear-gradient(135deg, #1e1e2f, #2c3e50);
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.testimonials h2 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: #e2e0e0;
+}
+
+.testimonials .subtitle {
+  font-size: 1.1rem;
+  color: #e2e0e0;
+  margin-bottom: 40px;
+}
+
+.testimonial-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.testimonial {
+  background: #fff;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.testimonial:hover {
+  transform: translateY(-8px);
+}
+
+.testimonial img {
+    width: 100px !important;
+  height: 120px !important;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.testimonial p {
+  font-style: italic;
+  font-size: 1.1rem;
+  color: #444;
+  margin-bottom: 15px;
+  padding: 30px 10px;
+}
+
+.testimonial h4 {
+  font-size: 1.2rem;
+  color: #000;
+  margin: 0;
+}
+
+.testimonial span {
+  font-size: 0.95rem;
+  color: #777;
+}
+
+
+/* Footer */
+.footer {
+  background: #111;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  margin-top: 50px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .service-cards {
+    flex-direction: column;
+  }
+  .portfolio-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .menu-toggle {
+    display: block;
+  }
+  .nav {
+    display: none;
+    flex-direction: column;
+    background: #222;
+    position: absolute;
+    top: 60px;
+    right: 10%;
+    padding: 15px;
+  }
+  .nav.active {
+    display: flex;
+  }
+}
+
+/*Insights*/
+
+.insights {
+  padding: 80px 20px;
+  text-align: center;
+  background: #f9f9f9;
+}
+
+.insights h2 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.insights .section-subtitle {
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 40px;
+}
+
+.insights-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.insight-card {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.insight-card:hover {
+  transform: translateY(-8px);
+}
+
+.insight-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.insight-card h3 {
+  font-size: 22px;
+  margin: 20px 15px 10px;
+}
+
+.insight-card p {
+  font-size: 16px;
+  color: #555;
+  margin: 0 15px 20px;
+}
+
+.insight-card .read-more {
+  display: inline-block;
+  margin: 0 15px 20px;
+  color: #007bff;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.insight-card .read-more:hover {
+  text-decoration: underline;
+}
